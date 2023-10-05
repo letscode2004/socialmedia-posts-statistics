@@ -1,0 +1,12 @@
+from pymongo import MongoClient
+import config
+
+client = MongoClient(config.MONGO_URI)
+db = client[config.MONGO_DB]
+trans_collection = db[config.TRANS_COLLECTION]
+
+def store_transaction(transaction):
+    try:
+        trans_collection.insert_one(transaction)
+    except Exception as e:
+        print(f"Error saving transaction: {e}")

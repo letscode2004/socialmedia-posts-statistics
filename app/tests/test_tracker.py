@@ -2,7 +2,7 @@
 
 import unittest
 from unittest.mock import Mock, patch
-from app.tracker import get_latest_block_number, get_transaction_by_block, store_transaction
+from app.app import get_latest_block_number, get_transaction_by_block, store_transaction
 
 
 class TrackerTests(unittest.TestCase):
